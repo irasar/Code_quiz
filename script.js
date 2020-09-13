@@ -1,4 +1,9 @@
 
+const startButton = document.createElementById('#start-btn')
+
+const questionContainerElement = document.getElementById('question-container')
+const questionElement = document.getElementById('question')
+const answerButtonsElement = document.getElementById('answer-buttons')
 
 
 var question = [
