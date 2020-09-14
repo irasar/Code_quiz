@@ -1,11 +1,49 @@
 
 
-var startButton = document.getElementById("start");
-var choiceButtonsElement = document.getElementById('choice-buttons');
-var questionElement = document.getElementById('questionEl');
+const startButton = document.getElementById("start")
+const choiceButtonsElement = document.getElementById("choice-buttons")
+const questionElement = document.getElementById("question")
+const questionConatinerElement = document.getElementById("question-container")
 
 
-var question = [
+
+let randomQuestions, currentQuestionIndex
+
+
+
+startButton.addEventListener("click", startGame)
+
+
+
+
+function startGame(){
+     console.log("started")
+     startButton.classList.add("hide")
+     randomQuestions = question.sort(() => Math.random() - .5)
+     currentQuestionIndex = 0
+     questionConatinerElement.classList.remove("hide")
+     setNextQuestion()
+    
+
+
+}
+
+
+function setNextQuestion() {
+showQuestion(randomQuestions[currentQuestionIndex])
+}
+
+function showQuestion(question) {
+questionElement.innerText = question.question
+
+}
+
+function selectAnswer() {
+  
+}
+
+
+const question = [
     {
       title: "Commonly used data types DO NOT include:",
       choices: ["1.Strings", "2.Booleans", "3.Alerts", "4.Numbers"],
