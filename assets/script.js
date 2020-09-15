@@ -25,7 +25,7 @@ var index = 0;
 //function that loads main page
 function openingPage() {
 
-  mainDisplay.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answwers will penalize your score/time by ten seconds!"
+  mainDisplay.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!"
   startBtn.textContent = "start"
   displayQuestionEl.append(mainDisplay, startBtn)
 }
@@ -104,18 +104,6 @@ function checkAnswer(event) {
 
 startBtn.addEventListener("click", startQuiz)
 openingPage();
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
