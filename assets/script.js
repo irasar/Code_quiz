@@ -4,11 +4,15 @@ var displayQuestionEl = document.querySelector(".display-questions");
 var timerEl = document.querySelector(".timer");
 var resultsEl = document.querySelector(".results");
 
-
+//make heading for start of quiz
 var mainDisplay = document.createElement("h3");
+//make button
 var startBtn = document.createElement("button");
 
-var //??
+//global variables
+//start timer variable
+var timer = 75;
+//var to store current index
 var index = 0;
 
 
@@ -18,10 +22,10 @@ var index = 0;
 
 
 
-
+//function that loads main page
 function openingPage() {
 
-  mainDisplay.textcontent = "press the button to start"
+  mainDisplay.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answwers will penalize your score/time by ten seconds!"
   startBtn.textContent = "start"
   displayQuestionEl.append(mainDisplay, startBtn)
 }
@@ -35,10 +39,14 @@ function startQuiz() {
 
 
 function showTimer() {
-  timerEl.textcontent = timer;
+  timerEl.textContent = timer;
   var questionTimer = setInterval(function () {
     timer--
     timerEl.textContent = timer;
+
+    if (timer <= 0) {
+      clearInterval(questionTimer);
+    }
   }, 1 * 1000)
 
 
@@ -46,13 +54,6 @@ function showTimer() {
 
 function nextQuestion() {
 
-}
-
-
-
-
-
-//under correct
 var currentQuestion = questions[index];
 
 console.log(currentQuestion);
@@ -104,6 +105,7 @@ function checkAnswer(event) {
   index++;
   nextQuestion();
 }
+
 startBtn.addEventListener("click", startQuiz)
 openingPage();
 
