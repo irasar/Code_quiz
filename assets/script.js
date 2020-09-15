@@ -33,7 +33,10 @@ function openingPage() {
 
 
 function startQuiz() {
+  //show timer function
   showTimer()
+  //call nextQuestion function
+  nextQuestion()
 }
 
 
@@ -72,17 +75,10 @@ for (let i = 0; i < currentQuestion.choices.length; i++) {
 
   choiceBtn.textContent = currentQuestion.choices[i];
 
-  choiceBtn.addEventListener("click, checkAnswer");
+  choiceBtn.addEventListener("click", checkAnswer);
 
   choicesContainer.append(choiceBtn);
 }
-
-
-
-
-
-
-
 
 
 displayQuestionEl.append(choicesContainer);
@@ -135,12 +131,12 @@ const questions = [
     answer: "Alerts"
   },
   {
-    title: "The conditional in an if/else statement is enclosed in ________.:",
+    title: "The conditional in an if/else statement is enclosed in ________:",
     choices: ["1.Quotes", "2.Curly Braces", "3.Parentheses", "4.Square Brackets"],
     answer: "3.Parentheses"
   },
   {
-    title: "Arrays in javaScript can be used to store __________.:",
+    title: "Arrays in javaScript can be used to store __________:",
     choices: ["1.Numbers and strings", "2.Other arrays", "3.Booleans", "4.All of the above"],
     answer: "4.All of the above"
   },
