@@ -31,7 +31,7 @@
     padding: 10px;
     box-shadow: 0 0 10px 2px;
   }
-  /*button properties */
+  /* choice button properties */
   .btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
