@@ -11,6 +11,7 @@ var mainDisplay = document.createElement("h3");
 //make start button
 var startBtn = document.createElement("button");
  var scoresEl = document.querySelector(".scores");
+ var finalPage = document.querySelector(".final-page");
 //global variables
 
 
@@ -153,8 +154,8 @@ function checkAnswer(event) {
   //make into function??
 } else {
   console.log("game over", timer)
-  gameContainer.style.display = 'none';
-  resultsEl.style.display = 'none';
+  gameContainer.style.display = "none";
+  resultsEl.style.display = "none";
   clearInterval(questionTimer);
 resultsScreen();
   }
@@ -181,10 +182,20 @@ var hsBtn = document.createElement("button");
 hsBtn.textContent = "Submit";
 hsBtn.addEventListener("click", highPage);
 scoresEl.append(formEl, inputEl, hsBtn);
+
+highPage();
 }
 
 
 function highPage (){
+  var headingEl = document.createElement("h2");
+  var hpBtn = document.createElement("button");
+  var finalBtn = document.createElement("button");
+  headingEl.textContent = "Highscores";
+  hpBtn.textContent = "Go Back";
+  finalBtn.textContent = "Clear Highscores";
+  finalPage.append(headingEl, hpBtn, finalBtn);
+
  console.log("hi")
 }
 
