@@ -20,13 +20,6 @@
     background-color: hsl(var(--hue), 100%, 20%);
   }
   
-  body.correct {
-    --hue: var(--hue-correct);
-  }
-  
-  body.wrong {
-    --hue: var(--hue-wrong);
-  }
   
   .container {
     width: 800px;
@@ -36,7 +29,7 @@
     padding: 10px;
     box-shadow: 0 0 10px 2px;
   }
-  
+  /*button properties */
   .btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -54,18 +47,9 @@
     outline: none;
   }
   
-  .btn:hover {
-    border-color: black;
-  }
+
   
-  .btn.correct {
-    --hue: var(--hue-correct);
-    color: black;
-  }
-  
-  .btn.wrong {
-    --hue: var(--hue-wrong);
-  }
+ /*start button*/
   
   #start {
     font-size: 1.5rem;
@@ -81,13 +65,9 @@
   
 
   
-
   
   
-  
-  
-  
-  /* Background Styles Only */
+  /* Background Style */
   
   @import url('https://fonts.googleapis.com/css?family=Raleway');
   

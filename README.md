@@ -8,14 +8,14 @@ This project is a multiple choice timed quiz game using javaScript. You should s
 
 ## Installation
 
-With my github link, this project will simply open in a browser window.
+There are no installations required. This project will simply open in a browser window.
 
+ https://irasar.github.io/Code_quiz/
 
 ## Usage 
 
 Provide instructions and examples for use. Include screenshots as needed. 
 
- https://irasar.github.io/Code_quiz/
 
 ## Credits
 
