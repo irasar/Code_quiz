@@ -10,7 +10,7 @@ var gameContainer = document.querySelector(".game-container");
 var mainDisplay = document.createElement("h3");
 //make start button
 var startBtn = document.createElement("button");
-
+ var scoresEl = document.querySelector(".scores");
 //global variables
 
 
@@ -20,7 +20,7 @@ var timer = 75;
 var index = 0;
 //oh?
 var questionTimer;
-
+var scoresArray = [];
 
 //object arrays
 const questions = [
@@ -138,9 +138,10 @@ function checkAnswer(event) {
   console.log(responseText);
   if (responseText === questions[index].answer) {
     //goes to next ques or shows score
-    console.log("correct");
+    resultsEl.textContent = "correct";
+    
   } else {
-    console.log("Incorrect");
+    resultsEl.textContent = "incorrect";
     timer -= 10;
   }
   if (index < questions.length - 1){
@@ -153,8 +154,9 @@ function checkAnswer(event) {
 } else {
   console.log("game over", timer)
   gameContainer.style.display = 'none';
+  resultsEl.style.display = 'none';
   clearInterval(questionTimer);
-
+resultsScreen();
   }
 
   //??? make timer stop check and see if qurstion index is undefined if it is it clear timer and show the score
@@ -163,10 +165,30 @@ function checkAnswer(event) {
 
 
 function resultsScreen() {
-//???to get final score to pop up in result screen
+//to get final score to pop up in result screen
 const resultsEl = localStorage.getItem(".results");
+var scoreTitle = document.createElement("h3");
+var scoreText = document.createElement("p");
+scoreTitle.textContent = "All Done!";
+scoreText.textContent = "Your final score is: " + timer;
 
+scoresEl.append(scoreTitle, scoreText);
+var formEl = document.createElement("form");
+var inputEl = document.createElement("input");
+formEl.textContent = "Enter initials: ";
+inputEl.textContent = "";
+var hsBtn = document.createElement("button");
+hsBtn.textContent = "Submit";
+hsBtn.addEventListener("click", highPage);
+scoresEl.append(formEl, inputEl, hsBtn);
 }
+
+
+function highPage (){
+ console.log("hi")
+}
+
+
 
 //add event listener for start button
 startBtn.addEventListener("click", startQuiz)
@@ -175,7 +197,7 @@ openingPage();
 
 
 
-
+//create form, click
 
 
 
