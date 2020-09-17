@@ -180,14 +180,15 @@ formEl.textContent = "Enter initials: ";
 inputEl.textContent = "";
 var hsBtn = document.createElement("button");
 hsBtn.textContent = "Submit";
-hsBtn.addEventListener("click", highPage);
 scoresEl.append(formEl, inputEl, hsBtn);
+hsBtn.addEventListener("click", highPage);
 
-highPage();
+
 }
 
 
 function highPage (){
+  scoresEl.textContent = "";
   var headingEl = document.createElement("h2");
   var hpBtn = document.createElement("button");
   var finalBtn = document.createElement("button");
