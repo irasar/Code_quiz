@@ -19,8 +19,9 @@ var startBtn = document.createElement("button");
 var timer = 75;
 //var to store current index
 var index = 0;
-//oh?
+
 var questionTimer;
+//array where users scores will go
 var scoresArray = [];
 
 //object arrays
@@ -143,6 +144,7 @@ function checkAnswer(event) {
     
   } else {
     resultsEl.textContent = "incorrect";
+    //if incorrect subtract 10 from timer
     timer -= 10;
   }
   if (index < questions.length - 1){
@@ -150,51 +152,91 @@ function checkAnswer(event) {
   index++;
   //show next question
   nextQuestion();
-   //logic if game over 
-  //make into function??
+   
 } else {
-  console.log("game over", timer)
+ //hide container
   gameContainer.style.display = "none";
   resultsEl.style.display = "none";
   clearInterval(questionTimer);
+  //call next function
 resultsScreen();
   }
 
-  //??? make timer stop check and see if qurstion index is undefined if it is it clear timer and show the score
+  
 }
 
 
-
+//function for users results and form
 function resultsScreen() {
 //to get final score to pop up in result screen
 const resultsEl = localStorage.getItem(".results");
+//creating elements to display results
 var scoreTitle = document.createElement("h3");
 var scoreText = document.createElement("p");
+//results text
 scoreTitle.textContent = "All Done!";
 scoreText.textContent = "Your final score is: " + timer;
-
+//make elements appear on page
 scoresEl.append(scoreTitle, scoreText);
+//creating elements so users can submit score
 var formEl = document.createElement("form");
 var inputEl = document.createElement("input");
+//adding text for forms
 formEl.textContent = "Enter initials: ";
 inputEl.textContent = "";
+//making form button
 var hsBtn = document.createElement("button");
 hsBtn.textContent = "Submit";
+//habing buttons and form show on page
 scoresEl.append(formEl, inputEl, hsBtn);
+//calling next function when form button is clicked
 hsBtn.addEventListener("click", highPage);
-
 
 }
 
 
+
+
+
+/*        ******* cannot get local storage to work *********
+("click", function(event){
+  event.preventDefault();
+  var highScores = JSON.parse(localStorage.getItem("key"));
+  if( highScores !== null) {
+    scoresArray = highscores;
+  }
+  var highscoreObj = {
+    name: inputEl.??.value,
+    score: newScore
+  }
+  scoresArray.push(highscoreObj);
+  localStorage.setItem("key", JSON.stringify(scoresArray));
+  highPage();
+});
+
+
+}
+
+*/
+
+
+
+
+
+//score board page
 function highPage (){
+  //clear results page
   scoresEl.textContent = "";
+//heading added
   var headingEl = document.createElement("h2");
+  //buttons added
   var hpBtn = document.createElement("button");
   var finalBtn = document.createElement("button");
+  //text for buttons
   headingEl.textContent = "Highscores";
   hpBtn.textContent = "Go Back";
   finalBtn.textContent = "Clear Highscores";
+  //apending elemenst to page
   finalPage.append(headingEl, hpBtn, finalBtn);
 
  console.log("hi")
@@ -209,7 +251,7 @@ openingPage();
 
 
 
-//create form, click
+
 
 
 
