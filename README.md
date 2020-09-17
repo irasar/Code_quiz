@@ -13,8 +13,7 @@ There are no installations required. This project will simply open in a browser 
  https://irasar.github.io/Code_quiz/
 
 ## Usage 
-
-Provide instructions and examples for use. 
+ 
 ![alt text](assets/quiz.png)
 
 ## Credits
