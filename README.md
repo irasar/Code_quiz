@@ -15,7 +15,7 @@ There are no installations required. This project will simply open in a browser 
 ## Usage 
 
 Provide instructions and examples for use. Include screenshots as needed. 
-![alt text](../quiz.png)
+![alt text](assets/quiz.png)
 
 ## Credits
 
