@@ -239,7 +239,7 @@ function highPage (){
   //apending elemenst to page
   finalPage.append(headingEl, hpBtn, finalBtn);
 
- console.log("hi")
+ console.log("hi!")
 }
 
 
