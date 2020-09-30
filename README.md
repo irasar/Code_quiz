@@ -21,7 +21,7 @@ There are no installations required. This project will simply open in a browser 
 
 ## Credits
 
-https://github.com/irasar
+https://github.com/irasar <br>
 https://www.youtube.com/watch?v=LQGTb112N_c
 
 
